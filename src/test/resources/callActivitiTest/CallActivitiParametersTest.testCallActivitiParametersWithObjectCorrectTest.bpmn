@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--sbtCheckSum="null"-->
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ext="http://org.eclipse.bpmn2/ext" xmlns:sbt="http://com.sbt/bpms/modeler" xmlns:tl="http://www.w3.org/2001/XMLSchema" id="f3f30547-542c-4456-8842-3f506cf05f38" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.4.5_1.9.0" targetNamespace="http://com.sbt/bpms/modeler">
+  <bpmn2:import importType="http://www.omg.org/spec/BPMN/20100524/MODEL" location="platform:/resource/bpms-test/src/test/resources/com/sbt/bpms/engine/usecases/callActivitiTest/CallActivitiParametersTest.testCallActivitiParametersWithObjectCorrectChildTest.bpmn" namespace="http://com.sbt/bpms/modeler"/>
+  <bpmn2:message id="cbe915b4-e600-4eb4-8ccf-466469d46a46" name="inputData">
+    <bpmn2:extensionElements>
+      <ext:style/>
+    </bpmn2:extensionElements>
+  </bpmn2:message>
+  <bpmn2:process id="c54c6734-5425-421f-8998-658ca7d90e75" name="CallActivitiParametersTest.testCallActivitiParametersWithObjectCorrectTest" isExecutable="true">
+    <bpmn2:laneSet id="ee92058c-5348-48d6-8c30-f2eace7b1f09" name="New Lane Set ">
+      <bpmn2:lane id="f7c02317-2082-4943-8af1-038ec6c0f1ec" name="New Lane">
+        <bpmn2:flowNodeRef>e1808697-6065-4a37-8664-e4fb380309ae</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>b60d4b4c-a247-49b8-83f7-309bcd374c77</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>af6a96f6-adc5-4742-88f4-6528c7622c29</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:startEvent id="e1808697-6065-4a37-8664-e4fb380309ae">
+      <bpmn2:outgoing>fe6ba212-39e2-4d72-97d4-8ff5b235dddd</bpmn2:outgoing>
+      <bpmn2:messageEventDefinition id="a545ef05-78fa-426b-b229-83819608a0ba" messageRef="cbe915b4-e600-4eb4-8ccf-466469d46a46"/>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="b60d4b4c-a247-49b8-83f7-309bcd374c77">
+      <bpmn2:incoming>cb1493f0-e42f-45bb-8bca-90dcc3d987ef</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:callActivity id="af6a96f6-adc5-4742-88f4-6528c7622c29" name="New Call Activity" calledElement="CallActivitiParametersTest.testCallActivitiParametersWithObjectCorrectChildTest.bpmn#a787457f-440c-4a4e-a493-e170a088ab4d">
+      <bpmn2:extensionElements>
+          <activiti:in source="serviceContext" target="serviceContext"/>
+          <activiti:in source="inVariable" target="inVariable"/>
+
+          <activiti:out source="serviceContext" target="serviceContext"/>
+          <activiti:out source="inVariable" target="inVariable"/>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>fe6ba212-39e2-4d72-97d4-8ff5b235dddd</bpmn2:incoming>
+      <bpmn2:outgoing>cb1493f0-e42f-45bb-8bca-90dcc3d987ef</bpmn2:outgoing>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="fe6ba212-39e2-4d72-97d4-8ff5b235dddd" sourceRef="e1808697-6065-4a37-8664-e4fb380309ae" targetRef="af6a96f6-adc5-4742-88f4-6528c7622c29"/>
+    <bpmn2:sequenceFlow id="cb1493f0-e42f-45bb-8bca-90dcc3d987ef" sourceRef="af6a96f6-adc5-4742-88f4-6528c7622c29" targetRef="b60d4b4c-a247-49b8-83f7-309bcd374c77"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="ae8c866c-af6a-4447-a9fc-e580354ef670">
+    <bpmndi:BPMNPlane id="ac93e861-7ad9-487f-8a25-17b1da09becb" bpmnElement="c54c6734-5425-421f-8998-658ca7d90e75">
+      <bpmndi:BPMNShape id="fe9cb12b-3fa7-4062-99c6-816f9172fe59" bpmnElement="f7c02317-2082-4943-8af1-038ec6c0f1ec" isHorizontal="true">
+        <dc:Bounds height="241.0" width="651.0" x="50.0" y="20.0"/>
+        <bpmndi:BPMNLabel id="e13241d4-b4ba-4cfc-84b8-25b0dc7f1313" labelStyle="d64c3ab0-5bd5-401e-97c3-d6efd9285eab">
+          <dc:Bounds height="56.0" width="15.0" x="56.0" y="112.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="f49e6dcc-af78-4f87-a421-897ad4dfa371" bpmnElement="e1808697-6065-4a37-8664-e4fb380309ae">
+        <dc:Bounds height="36.0" width="36.0" x="110.0" y="120.0"/>
+        <bpmndi:BPMNLabel id="afc35fb5-150f-459d-87e6-88d1fb26f206" labelStyle="d64c3ab0-5bd5-401e-97c3-d6efd9285eab"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="c81cd83d-04da-48cc-b5e3-d055547b56fc" bpmnElement="b60d4b4c-a247-49b8-83f7-309bcd374c77">
+        <dc:Bounds height="36.0" width="36.0" x="600.0" y="120.0"/>
+        <bpmndi:BPMNLabel id="b93b2afd-3c04-4a02-9b16-b45a43374e6e" labelStyle="d64c3ab0-5bd5-401e-97c3-d6efd9285eab"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ece9fd7c-74db-411e-a1bb-8d2719d9f4ce" bpmnElement="af6a96f6-adc5-4742-88f4-6528c7622c29" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="300.0" y="113.0"/>
+        <bpmndi:BPMNLabel id="aeae3089-8b52-40e0-904a-dfe76b83bb38" labelStyle="d64c3ab0-5bd5-401e-97c3-d6efd9285eab">
+          <dc:Bounds height="15.0" width="88.0" x="311.0" y="130.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="e781599e-4ee7-485b-965c-e58d2ac00bc5" bpmnElement="fe6ba212-39e2-4d72-97d4-8ff5b235dddd" sourceElement="f49e6dcc-af78-4f87-a421-897ad4dfa371" targetElement="ece9fd7c-74db-411e-a1bb-8d2719d9f4ce">
+        <di:waypoint xsi:type="dc:Point" x="146.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="223.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="300.0" y="138.0"/>
+        <bpmndi:BPMNLabel id="c9b8bb5a-7f0e-44a4-83a7-4e7fcadec3bd"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f8abd29e-b713-4c52-b66a-35db41c33f77" bpmnElement="cb1493f0-e42f-45bb-8bca-90dcc3d987ef" sourceElement="ece9fd7c-74db-411e-a1bb-8d2719d9f4ce" targetElement="c81cd83d-04da-48cc-b5e3-d055547b56fc">
+        <di:waypoint xsi:type="dc:Point" x="410.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="505.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="600.0" y="138.0"/>
+        <bpmndi:BPMNLabel id="e8be7942-16f1-454a-a929-9e4015a9be37"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="d64c3ab0-5bd5-401e-97c3-d6efd9285eab">
+      <dc:Font name="arial" size="9.0"/>
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

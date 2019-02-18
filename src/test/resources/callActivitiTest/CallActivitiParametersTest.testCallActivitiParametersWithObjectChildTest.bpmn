@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--sbtCheckSum="null"-->
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://activiti.org/bpmn"
+                   xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                   xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                   xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                   xmlns:sbt="http://com.sbt/bpms/modeler" xmlns:tl="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn"
+                   id="f6fb016f-4446-4f4b-b00c-0f055f8ee6b5" exporter="org.eclipse.bpmn2.modeler.core"
+                   exporterVersion="1.4.5_1.9.0" targetNamespace="http://com.sbt/bpms/modeler">
+  <bpmn2:process id="a799f4e2-5d2c-46da-b3df-a4e7f83cf99c" name="CallActivitiParametersTest.testCallActivitiParametersWithObjectChildTest" isExecutable="true">
+    <bpmn2:laneSet id="d9379678-b486-4158-b7ad-eaa73a17f678" name="New Lane Set ">
+      <bpmn2:lane id="f4ecd16f-056d-4e09-ade8-ca5bcb816e14"  name="New Lane">
+        <bpmn2:flowNodeRef>d8e5e6bc-13ea-4e72-a16f-165717e568c7</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>def68582-4229-423a-b4ab-7e93826284d4</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>d37bc2f7-082c-4443-a661-5c0850952b37</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>cf23fe3a-7514-4a07-9ebe-b5ecaef0a5dd</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:startEvent id="def68582-4229-423a-b4ab-7e93826284d4">
+      <bpmn2:outgoing>db7a44aa-34e2-4171-b442-b6b367b75be3</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="d8e5e6bc-13ea-4e72-a16f-165717e568c7">
+      <bpmn2:incoming>d58ea0a9-40dd-4c0a-987b-baab54be80c2</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:userTask id="d37bc2f7-082c-4443-a661-5c0850952b37" bpmn:candidateGroups="role_code" bpmn:dueDate="PT3H" bpmn:formKey="" bpmn:priority="" bpmn:assignee="" name="UserTask">
+      <bpmn2:extensionElements>
+        <activiti:taskListenerList>
+          <activiti:taskListener id="44a74be7-ea90-4b61-81e7-cb9e422be608" expression="#{task.setVariableLocal('inVariable',inVariable)}; " event="create"/>
+          <activiti:taskListener id="589f1f3a-e745-496a-a913-6a2062eb3b5c" expression="#{execution.setVariable('inVariable',inVariable)}; " event="complete"/>
+        </activiti:taskListenerList>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>db7a44aa-34e2-4171-b442-b6b367b75be3</bpmn2:incoming>
+      <bpmn2:outgoing>e0dd9a80-546d-455b-b7a0-4ccbd36596dd</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:serviceTask id="cf23fe3a-7514-4a07-9ebe-b5ecaef0a5dd" bpmn:class="com.filimonova.BaseServiceTaskForObjectExecutor" bpmn:skipExpression="" name="New Service Task">
+      <bpmn2:incoming>e0dd9a80-546d-455b-b7a0-4ccbd36596dd</bpmn2:incoming>
+      <bpmn2:outgoing>d58ea0a9-40dd-4c0a-987b-baab54be80c2</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="db7a44aa-34e2-4171-b442-b6b367b75be3" sourceRef="def68582-4229-423a-b4ab-7e93826284d4" targetRef="d37bc2f7-082c-4443-a661-5c0850952b37"/>
+    <bpmn2:sequenceFlow id="e0dd9a80-546d-455b-b7a0-4ccbd36596dd" sourceRef="d37bc2f7-082c-4443-a661-5c0850952b37" targetRef="cf23fe3a-7514-4a07-9ebe-b5ecaef0a5dd"/>
+    <bpmn2:sequenceFlow id="d58ea0a9-40dd-4c0a-987b-baab54be80c2" sourceRef="cf23fe3a-7514-4a07-9ebe-b5ecaef0a5dd" targetRef="d8e5e6bc-13ea-4e72-a16f-165717e568c7"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="f3e9244a-4add-429f-a895-5a5866ea3dbf">
+    <bpmndi:BPMNPlane id="e680f02f-c527-41b6-8997-b2fe230cb54b" bpmnElement="a799f4e2-5d2c-46da-b3df-a4e7f83cf99c">
+      <bpmndi:BPMNShape id="abd0a3d9-fb50-4bbf-b5a8-cea2ac630230" bpmnElement="f4ecd16f-056d-4e09-ade8-ca5bcb816e14" isHorizontal="true">
+        <dc:Bounds height="221.0" width="781.0" x="50.0" y="20.0"/>
+        <bpmndi:BPMNLabel id="bd6372da-bedb-42df-8b05-600475ff6854" labelStyle="cf73cf4b-79ea-4d89-9152-322037394b5c">
+          <dc:Bounds height="56.0" width="15.0" x="56.0" y="102.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="c5da3b61-59be-42e5-9d9d-a2d1422d11ec" bpmnElement="def68582-4229-423a-b4ab-7e93826284d4">
+        <dc:Bounds height="36.0" width="36.0" x="110.0" y="120.0"/>
+        <bpmndi:BPMNLabel id="ce8ef5fc-814f-44b4-8436-2f1057826b24" labelStyle="cf73cf4b-79ea-4d89-9152-322037394b5c"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="af4b686e-54a3-4320-b523-69862a467c74" bpmnElement="d8e5e6bc-13ea-4e72-a16f-165717e568c7">
+        <dc:Bounds height="36.0" width="36.0" x="750.0" y="120.0"/>
+        <bpmndi:BPMNLabel id="ba782061-030f-438c-9ac9-0db137197322" labelStyle="cf73cf4b-79ea-4d89-9152-322037394b5c"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="d8920a00-2b33-4d84-a1f0-83e220d35a56" bpmnElement="d37bc2f7-082c-4443-a661-5c0850952b37" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="310.0" y="114.0"/>
+        <bpmndi:BPMNLabel id="ab148ceb-2dc6-4df9-914e-4590dc1a3bb8" labelStyle="cf73cf4b-79ea-4d89-9152-322037394b5c">
+          <dc:Bounds height="15.0" width="54.0" x="338.0" y="131.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="f667a3e3-c7d2-4bde-9129-aa6d14641f8c" bpmnElement="cf23fe3a-7514-4a07-9ebe-b5ecaef0a5dd" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="530.0" y="114.0"/>
+        <bpmndi:BPMNLabel id="d49412c1-8cfe-4ab8-9dd9-da4df63b4a00" labelStyle="cf73cf4b-79ea-4d89-9152-322037394b5c">
+          <dc:Bounds height="15.0" width="98.0" x="536.0" y="131.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="fd3415ce-7c91-44d0-828e-1de73911a351" bpmnElement="db7a44aa-34e2-4171-b442-b6b367b75be3" sourceElement="c5da3b61-59be-42e5-9d9d-a2d1422d11ec" targetElement="d8920a00-2b33-4d84-a1f0-83e220d35a56">
+        <di:waypoint xsi:type="dc:Point" x="146.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="228.0" y="139.0"/>
+        <di:waypoint xsi:type="dc:Point" x="310.0" y="139.0"/>
+        <bpmndi:BPMNLabel id="f2022362-c804-4548-aee7-94b657bc5117"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="f9e258db-fed2-45d0-9cc1-77d142f1abb4" bpmnElement="e0dd9a80-546d-455b-b7a0-4ccbd36596dd" sourceElement="d8920a00-2b33-4d84-a1f0-83e220d35a56" targetElement="f667a3e3-c7d2-4bde-9129-aa6d14641f8c">
+        <di:waypoint xsi:type="dc:Point" x="420.0" y="139.0"/>
+        <di:waypoint xsi:type="dc:Point" x="475.0" y="139.0"/>
+        <di:waypoint xsi:type="dc:Point" x="530.0" y="139.0"/>
+        <bpmndi:BPMNLabel id="b336adf6-e9e1-443b-9a83-c842e3fbbede"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="c69597ea-bc2b-4b51-a3a7-70d3ac18028b" bpmnElement="d58ea0a9-40dd-4c0a-987b-baab54be80c2" sourceElement="f667a3e3-c7d2-4bde-9129-aa6d14641f8c" targetElement="af4b686e-54a3-4320-b523-69862a467c74">
+        <di:waypoint xsi:type="dc:Point" x="640.0" y="139.0"/>
+        <di:waypoint xsi:type="dc:Point" x="695.0" y="138.0"/>
+        <di:waypoint xsi:type="dc:Point" x="750.0" y="138.0"/>
+        <bpmndi:BPMNLabel id="a2a8179d-9ce6-4347-aac4-4e811e009c7c"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="cf73cf4b-79ea-4d89-9152-322037394b5c">
+      <dc:Font name="arial" size="9.0"/>
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

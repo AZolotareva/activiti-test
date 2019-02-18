@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--sbtCheckSum="null"-->
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://activiti.org/bpmn" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:sbt="http://com.sbt/bpms/modeler" xmlns:tl="http://www.w3.org/2001/XMLSchema" id="ef1ce68c-aae7-4044-80be-164b0f35e322" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.4.5_1.9.0" targetNamespace="http://com.sbt/bpms/modeler">
+  <bpmn2:process id="a787457f-440c-4a4e-a493-e170a088ab4d" name="CallActivitiParametersTest.testCallActivitiParametersWithObjectCorrectChildTest" isExecutable="true">
+    <bpmn2:laneSet id="be35849b-1bf6-4810-883f-dc55037df6fd" name="New Lane Set ">
+      <bpmn2:lane id="f8e5cf85-3781-4231-9f76-6d3158b14a4d" name="New Lane">
+        <bpmn2:flowNodeRef>e4cd1aee-c8d1-43e1-9df6-e948093fcc27</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>b0d64a1b-b51d-40f4-9fb8-79cf4bcae64e</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>f48ea4b5-e545-424c-b2b4-1a9919aa9187</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>d579cdec-4547-4afa-b294-08473f89f934</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:startEvent id="e4cd1aee-c8d1-43e1-9df6-e948093fcc27">
+      <bpmn2:outgoing>e4e88d63-f246-40d1-b50c-c53736b4fd5c</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="b0d64a1b-b51d-40f4-9fb8-79cf4bcae64e">
+      <bpmn2:incoming>b9dae127-b802-45eb-823c-38d5079b6555</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:userTask id="d579cdec-4547-4afa-b294-08473f89f934" bpmn:candidateGroups="role" bpmn:dueDate="PT2H" bpmn:formKey="" bpmn:priority="" bpmn:assignee="" name="New User Task">
+      <bpmn2:extensionElements>
+        <taskListenerList>
+          <taskListener id="0d6de4c5-c4d5-4c7e-8332-7e0bd2fee4d2" expression="#{task.setVariableLocal('serviceContextLocal',serviceContext)}; " event="create"/>
+          <taskListener id="40697319-d620-4705-8ca5-19c2ca87e41e" expression="#{execution.setVariable('serviceContext',serviceContextLocal)}; " event="complete"/>
+          <taskListener id="3a5ff151-be30-4b49-b99d-13d9a221adbd" expression="#{task.setVariableLocal('inVariableLocal',inVariable)}; " event="create"/>
+          <taskListener id="c7558bed-5bf8-48ad-8bc8-199e8063e73e" expression="#{execution.setVariable('inVariable',inVariableLocal)}; " event="complete"/>
+        </taskListenerList>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>e4e88d63-f246-40d1-b50c-c53736b4fd5c</bpmn2:incoming>
+      <bpmn2:outgoing>e88c2398-f869-479b-845e-22e4e5787ad4</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="e4e88d63-f246-40d1-b50c-c53736b4fd5c" sourceRef="e4cd1aee-c8d1-43e1-9df6-e948093fcc27" targetRef="d579cdec-4547-4afa-b294-08473f89f934"/>
+    <bpmn2:serviceTask id="f48ea4b5-e545-424c-b2b4-1a9919aa9187" bpmn:class="com.sbt.bpms.engine.usecases.callActivitiTest.BaseServiceTaskForObjectCorrectExecutor" bpmn:skipExpression="" name="New Service Task">
+      <bpmn2:incoming>e88c2398-f869-479b-845e-22e4e5787ad4</bpmn2:incoming>
+      <bpmn2:outgoing>b9dae127-b802-45eb-823c-38d5079b6555</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="e88c2398-f869-479b-845e-22e4e5787ad4" sourceRef="d579cdec-4547-4afa-b294-08473f89f934" targetRef="f48ea4b5-e545-424c-b2b4-1a9919aa9187"/>
+    <bpmn2:sequenceFlow id="b9dae127-b802-45eb-823c-38d5079b6555" sourceRef="f48ea4b5-e545-424c-b2b4-1a9919aa9187" targetRef="b0d64a1b-b51d-40f4-9fb8-79cf4bcae64e"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="cdfb53f3-2453-4c8b-b775-6913587a36cb">
+    <bpmndi:BPMNPlane id="e9ed9f9f-3f52-4ae8-8159-1cbca117650f" bpmnElement="a787457f-440c-4a4e-a493-e170a088ab4d">
+      <bpmndi:BPMNShape id="bc2a371b-b415-4818-af21-2376ae9de389" bpmnElement="f8e5cf85-3781-4231-9f76-6d3158b14a4d" isHorizontal="true">
+        <dc:Bounds height="150.0" width="761.0" x="50.0" y="20.0"/>
+        <bpmndi:BPMNLabel id="c0ceb8d2-baa4-4334-820e-efb544b1241a" labelStyle="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da">
+          <dc:Bounds height="56.0" width="15.0" x="56.0" y="67.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="e195da75-bf64-49e3-8253-05bb8382a5d5" bpmnElement="e4cd1aee-c8d1-43e1-9df6-e948093fcc27">
+        <dc:Bounds height="36.0" width="36.0" x="109.0" y="70.0"/>
+        <bpmndi:BPMNLabel id="af671a0a-ae90-4ce2-beed-a729a21e773b" labelStyle="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="bfda9cd1-6011-4876-bb25-60f2fba44d26" bpmnElement="b0d64a1b-b51d-40f4-9fb8-79cf4bcae64e">
+        <dc:Bounds height="36.0" width="36.0" x="760.0" y="70.0"/>
+        <bpmndi:BPMNLabel id="a4692fe5-9e6b-47bb-89a9-d1febe894f74" labelStyle="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="aacac372-9256-4f40-af0a-fc17dd2b1d28" bpmnElement="d579cdec-4547-4afa-b294-08473f89f934" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="270.0" y="62.0"/>
+        <bpmndi:BPMNLabel id="c1be8742-4793-4cfa-8518-cf2102001bc2" labelStyle="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da">
+          <dc:Bounds height="15.0" width="85.0" x="282.0" y="79.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="a274aef3-e56a-48a6-8871-0cf792bb592a" bpmnElement="f48ea4b5-e545-424c-b2b4-1a9919aa9187" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="480.0" y="62.0"/>
+        <bpmndi:BPMNLabel id="d1b07e87-bbaf-41a2-92f1-1d07a7b576cf" labelStyle="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da">
+          <dc:Bounds height="15.0" width="98.0" x="486.0" y="79.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="b0eb3dbe-dd4c-4745-a2b5-27094a075fae" bpmnElement="e4e88d63-f246-40d1-b50c-c53736b4fd5c" sourceElement="e195da75-bf64-49e3-8253-05bb8382a5d5" targetElement="aacac372-9256-4f40-af0a-fc17dd2b1d28">
+        <di:waypoint xsi:type="dc:Point" x="145.0" y="88.0"/>
+        <di:waypoint xsi:type="dc:Point" x="207.0" y="88.0"/>
+        <di:waypoint xsi:type="dc:Point" x="270.0" y="87.0"/>
+        <bpmndi:BPMNLabel id="fcc44fbe-cb9d-4029-8aba-40ea26662626"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="d727185b-bbc3-408a-b1d3-b31723df3f2a" bpmnElement="e88c2398-f869-479b-845e-22e4e5787ad4" sourceElement="aacac372-9256-4f40-af0a-fc17dd2b1d28" targetElement="a274aef3-e56a-48a6-8871-0cf792bb592a">
+        <di:waypoint xsi:type="dc:Point" x="380.0" y="87.0"/>
+        <di:waypoint xsi:type="dc:Point" x="430.0" y="87.0"/>
+        <di:waypoint xsi:type="dc:Point" x="480.0" y="87.0"/>
+        <bpmndi:BPMNLabel id="e505ee3c-594b-40c9-8399-1eb0a9fa3fab"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="e608ae88-26a3-4b83-968b-a9a087d9dfbf" bpmnElement="b9dae127-b802-45eb-823c-38d5079b6555" sourceElement="a274aef3-e56a-48a6-8871-0cf792bb592a" targetElement="bfda9cd1-6011-4876-bb25-60f2fba44d26">
+        <di:waypoint xsi:type="dc:Point" x="590.0" y="87.0"/>
+        <di:waypoint xsi:type="dc:Point" x="675.0" y="87.0"/>
+        <di:waypoint xsi:type="dc:Point" x="760.0" y="88.0"/>
+        <bpmndi:BPMNLabel id="aea28431-1c60-469e-aa90-c49ef14df6bf"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="ad1fd78e-f0db-4c1f-b9d6-270bb8ed66da">
+      <dc:Font name="arial" size="9.0"/>
+    </bpmndi:BPMNLabelStyle>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
